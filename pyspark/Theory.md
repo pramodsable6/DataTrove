@@ -20,3 +20,7 @@
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions
 - Used to trigger some work(Job)
 - e.g. read(), write(), collect(), take(), count(), etc.
+
+```Hierarchies:```
+1. Driver > Worker > Executer
+2. Jobs > Stages > Tasks
