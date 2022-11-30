@@ -24,3 +24,7 @@
 ```Hierarchies:```
 1. Driver > Worker > Executer
 2. Jobs > Stages > Tasks
+
+```collect()```
+- Collect pulls data to spark driver. This is useful only when you are working with filtered dataset.
+- Running collect() on large dataset can result in out of memory error.
