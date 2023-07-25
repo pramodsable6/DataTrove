@@ -1,3 +1,7 @@
+> Context
+- When you add a new column having constant value using `lit()` the default nullable property is set to **false**.
+- This can be altered by using following code -
+
 > Code
 ```python
 df.withColumn('region_id', when(lit(True), lit(1))).printSchema()
