@@ -34,4 +34,4 @@
 - Broadcast the smaller DataFrame to all the nodes
 - Use cache() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
-- Optimiza the joins by repartitioning(redistributing) the data based on joining column
+- Optimize the joins by repartitioning(redistributing) the data based on joining column
