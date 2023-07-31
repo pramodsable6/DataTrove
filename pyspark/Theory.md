@@ -30,7 +30,7 @@
 - Running collect() on large dataset can result in out of memory error.
 
 ```Optimization teechniques```
-- Use DataFrames over RDDs 
+- Use DataFrames over RDDs since its queries can be optimized by Spark's Catalyst Optimizer
 - Broadcast the smaller DataFrame to all the nodes
 - Use cache() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
