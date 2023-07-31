@@ -28,3 +28,10 @@
 ```collect()```
 - Collect pulls data to spark driver. This is useful only when you are working with filtered dataset.
 - Running collect() on large dataset can result in out of memory error.
+
+```Optimization teechniques```
+- Use DataFrames over RDDs 
+- Broadcast the smaller DataFrame to all the nodes
+- Use cache() method to cache the intermediate transformations
+- Reduce expensive shuffle operations - wide transformations
+- Optimiza the joins by repartitioning(redistributing) the data based on joining column
