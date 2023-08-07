@@ -24,6 +24,14 @@
 ```Hierarchies:```
 1. Driver > Worker > Executer
 2. Jobs > Stages > Tasks
+- Job - Each action creates a job.
+- Stage
+  - Spark driver creates a logical plan for each job and breaks down the plan into stages at each wide dependency transformation.
+  - If there are n wide transformations there will be n + 1 stages.
+  - Stages can only run sequentially as data from 1 stage is input for the next stage. The data from 1 stage is shared with other by shuffle/sort operation.
+- Task
+  - Each stage can be executed as number of parallel tasks. The no. of tasks that can run in parallel = no. of input partitions.
+  - Task is the smallest unit of work which is executed on executers. Executer needs dataframe partition and code API to perform the task.
 
 ```collect()```
 - Collect pulls data to spark driver. This is useful only when you are working with filtered dataset.
