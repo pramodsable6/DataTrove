@@ -1,0 +1,6 @@
+name: memory
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - pyspark
