@@ -9,5 +9,5 @@ This repository contains -
 ```
 docker build -t memory .
 docker images
-docker run -i -t memory -name memory_1
+docker run --name memory_1 -i -t memory
 ```
