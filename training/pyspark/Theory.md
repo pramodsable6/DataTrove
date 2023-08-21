@@ -43,6 +43,17 @@
 - Use cache() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
 - Optimize the joins by repartitioning(redistributing) the data based on joining column
+- Enable dynamic resource allocation
+  ```
+  from pyspark.sql import SparkSession
+  spark = SparkSession.builder \
+      .appName("My app") \
+      .config("spark.dynamicAllocation.enabled", "true") \
+      .config("spark.dynamicAllocation.minExecutors", 1) \
+      .config("spark.dynamicAllocation.maxExecutors", 10) \
+      .config("spark.shuffle.service.enabled", "true") \
+      .getOrCreate()
+  ```
 
 ```Spark Config Order of Precedence```
 1. Any values defined in spark-defaults.conf will be read first
