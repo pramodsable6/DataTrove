@@ -43,3 +43,12 @@
 - Use cache() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
 - Optimize the joins by repartitioning(redistributing) the data based on joining column
+
+```Spark Config Order of Precedence```
+1. Any values defined in spark-defaults.conf will be read first
+2. Followed by those supplied on the command line with spark-submit
+3. And finally those set via SparkSession in the spark Application
+   ```
+   spark.conf.get("spark.sql.shuffle.partitions")
+   spark.conf.set("spark.sql.shuffle.partitions", 10)
+   ```
