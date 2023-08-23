@@ -9,6 +9,13 @@
 1. Client -> IDE, Notebooks
 2. Cluster -> Submit
 
+```Serialization and de-serialization:```
+Serialization is the process of converting objects into bytes to transfer them between nodes or store them in a file/memory buffer. In Spark, serialization is crucial for transferring objects between different nodes in a distributed cluster.
+Serialization is used by Spark for a variety of operations, including:
+ - RDD transformations: When an RDD is transformed, the objects in the RDD are serialized and sent to the executors where the transformation is performed.
+ - Broadcast variables: Broadcast variables are shared by all executors in a cluster. When a broadcast variable is created, it is serialized and sent to all executors.
+ - Accumulators: Accumulators are used to aggregate data across a cluster. When an accumulator is updated, the update is serialized and sent to all executors.
+
 ```Transformations:```
 1. Narrow Transformations - no shuffling needed (e.g. select(), filter(), withColumn(), drop())
 2. Wide Transformations - shuffling needed (such as groupBy(), distinct(), join(), agg(), etc.)
@@ -40,7 +47,7 @@
 ```Optimization teechniques```
 - Use DataFrames over RDDs since its queries can be optimized by Spark's Catalyst Optimizer
 - Broadcast the smaller DataFrame to all the nodes
-- Use cache() method to cache the intermediate transformations
+- Use cache() or persist() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
 - Optimize the joins by repartitioning(redistributing) the data based on joining column
 - Enable dynamic resource allocation
