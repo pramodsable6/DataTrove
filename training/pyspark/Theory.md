@@ -44,12 +44,14 @@ Serialization is used by Spark for a variety of operations, including:
 - Collect pulls data to spark driver. This is useful only when you are working with filtered dataset.
 - Running collect() on large dataset can result in out of memory error.
 
-```Optimization teechniques```
+```Optimization techniques```
 - Use DataFrames over RDDs since its queries can be optimized by Spark's Catalyst Optimizer
-- Broadcast the smaller DataFrame to all the nodes
+- Improving the performance of Joins 
+  - Broadcast Hash Join - Broadcast the smaller DataFrame to all the nodes
+  - Shuffle Sort Merge Join - We can eliminate exchange step if from this join if we create **partitioned buckets** `using bucketBy()` for common sorted keys or columns on which we want to perform frequent equi joins
 - Use cache() or persist() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
-- Optimize the joins by repartitioning(redistributing) the data based on joining column
+- `repartition()` the dataframe where necessary to increase parallelism
 - Enable dynamic resource allocation
   ```
   from pyspark.sql import SparkSession
