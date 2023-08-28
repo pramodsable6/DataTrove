@@ -48,7 +48,7 @@ Serialization is used by Spark for a variety of operations, including:
 - Use DataFrames over RDDs since its queries can be optimized by Spark's Catalyst Optimizer
 - Improving the performance of Joins 
   - Broadcast Hash Join - Broadcast the smaller DataFrame to all the nodes
-  - Shuffle Sort Merge Join - We can eliminate exchange step if from this join if we create **partitioned buckets** `using bucketBy()` for common sorted keys or columns on which we want to perform frequent equi joins
+  - Shuffle Sort Merge Join - We can eliminate exchange step from this join if we create **partitioned buckets** `using bucketBy()` for common sorted keys or columns on which we want to perform frequent equi joins
 - Use cache() or persist() method to cache the intermediate transformations
 - Reduce expensive shuffle operations - wide transformations
 - `repartition()` the dataframe where necessary to increase parallelism
