@@ -1,4 +1,4 @@
-# memory
+# ThirdEye
 Machines can remember, learn, and do stuff using data!  
 They can somewhat mimic human intellect, but not the ability to be conscious of their existence.
 
