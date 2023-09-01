@@ -26,7 +26,7 @@ Serialization is used by Spark for a variety of operations, including:
 - Not lazily evaluated
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions
 - Used to trigger some work(Job)
-- e.g. read(), write(), collect(), take(), count(), etc.
+- e.g. write(), collect(), take(), count(), etc.
 
 ```Hierarchies:```
 1. Driver > Worker > Executer
