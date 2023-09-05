@@ -64,6 +64,25 @@ Serialization is used by Spark for a variety of operations, including:
       .getOrCreate()
   ```
 
+```How to mitigate the data skewness caused by repartitioning the data on specific column?```  
+- Salting is a technique in Spark that adds random values to data to distribute it more evenly across partitions. This technique is used to mitigate the effects of skewed data. Salting can result in a more balanced workload and improved performance.  
+- Salting works by adding a random component, or "salt", to the data. This salt is concatenated to the driving key of the data. When reshuffling occurs, the data distribution is fairly even. This ensures that each task on its respective partition takes nearly the same amount of time.  
+- Salting is usually good to adopt for wide transformations that require shuffling, like join operations.
+- Salting is unrelated to any of the keys. This is a significant benefit because you don't have to worry about some keys with similar contexts having the same value again.
+
+```Repartition vs Coalesce```
+Repartition creates new partitions and shuffles all the data. Coalesce uses existing partitions to avoid a full shuffle.
+
+```How to deal with small file problem?```   
+1. Reduce the number of shuffle partitions   
+```spark.conf.set("spark.sql.shuffle.partitions", 10)```
+2. Combine small files into larger files   
+```spark.conf.set("spark.sql.shuffle.consolidateFiles", 10)```
+3. Use a different file format   
+```df.write.parquet("/path/to/parquet/files")```
+4. Use a different storage system   
+```df.write.hdfs("/path/to/hdfs/files")```
+
 ```Spark Config Order of Precedence```
 1. Any values defined in spark-defaults.conf will be read first
 2. Followed by those supplied on the command line with spark-submit
