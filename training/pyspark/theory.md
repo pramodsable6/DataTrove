@@ -64,11 +64,29 @@ Serialization is used by Spark for a variety of operations, including:
       .getOrCreate()
   ```
 
+```What is data skewness?```
+- Data skewness is a common issue that can significantly impact the performance and efficiency of Apache Spark, a popular big data processing framework. 
+- Data skewness occurs when the distribution of data across partitions is uneven, leading to some partitions having much larger data sizes than others. 
+- This can result in certain tasks taking significantly longer to complete, causing performance bottlenecks and delaying overall job completion times.
+- Data skewness can occur in various scenarios, such as when the input data has skewed keys or values, when the data is unevenly distributed across partitions, or when there are imbalanced operations like joins or aggregations.
+- Data Partitioning:
+Data partitioning is a key strategy in Spark for distributing data across multiple worker nodes for parallel processing. Proper data partitioning can help achieve a balanced distribution of data across partitions, reducing the chances of data skewness. Some common data partitioning techniques include:
+  - Hash Partitioning: In hash partitioning, data is partitioned based on the hash value of a specific column. This ensures that the data is distributed evenly across partitions, reducing the chances of data skewness.
+  - Range Partitioning: In range partitioning, data is partitioned based on a specific range of values of a particular column. This can help distribute data evenly across partitions, especially when the data has a known range or distribution.
+  - Custom Partitioning: Custom partitioning allows users to define their own partitioning logic based on the specific characteristics of their data. This can help optimize data distribution and minimize data skewness.
+
 ```How to mitigate the data skewness caused by repartitioning the data on specific column?```  
 - Salting is a technique in Spark that adds random values to data to distribute it more evenly across partitions. This technique is used to mitigate the effects of skewed data. Salting can result in a more balanced workload and improved performance.  
 - Salting works by adding a random component, or "salt", to the data. This salt is concatenated to the driving key of the data. When reshuffling occurs, the data distribution is fairly even. This ensures that each task on its respective partition takes nearly the same amount of time.  
 - Salting is usually good to adopt for wide transformations that require shuffling, like join operations.
 - Salting is unrelated to any of the keys. This is a significant benefit because you don't have to worry about some keys with similar contexts having the same value again.
+```
+import pyspark.sql.functions as F
+df = df.withColumn('salt', F.rand())
+df = df.repartition(8, 'salt')
+# To check if our salt worked, we can use groupBy -
+df.groupBy(F.spark_partition_id()).count().show()
+```
 
 ```Repartition vs Coalesce```
 Repartition creates new partitions and shuffles all the data. Coalesce uses existing partitions to avoid a full shuffle.
