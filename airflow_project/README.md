@@ -1,0 +1,1 @@
+Update dags_folder path in airflow.cfg file
