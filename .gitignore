@@ -2,3 +2,4 @@
 .ipynb_checkpoints
 .vscode
 training/pyspark/delta_lake/spark-warehouse
+*.cpython-310.pyc
