@@ -23,7 +23,7 @@ Serialization is used by Spark for a variety of operations, including:
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#transformations
 
 ```Actions:```
-- Not lazily evaluated
+- Not lazily evaluated - Eager evaluation
 - https://spark.apache.org/docs/latest/rdd-programming-guide.html#actions
 - Used to trigger some work(Job)
 - e.g. write(), collect(), take(), count(), etc.
@@ -109,3 +109,9 @@ Repartition creates new partitions and shuffles all the data. Coalesce uses exis
    spark.conf.get("spark.sql.shuffle.partitions")
    spark.conf.set("spark.sql.shuffle.partitions", 10)
    ```
+
+```Incremental data processing```
+- Use AWS Glue job bookmarks
+  - S3 - Stores filenames and timestamp of already processed files
+  - JDBC - Stores already processed keys
+- Use S3 events
