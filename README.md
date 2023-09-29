@@ -1,4 +1,4 @@
-# ThirdEye
+# Agna
 
 This repository contains -
 - Collection of tools 🔧🛠⚙🔎 required for data engineering and data science projects.
@@ -8,7 +8,7 @@ This repository contains -
 
 ## Docker Commands
 ```
-docker build -t memory .
+docker build -t agna .
 docker images
-docker run --name memory_1 -i -t memory
+docker run --name agna_1 -i -t agna
 ```

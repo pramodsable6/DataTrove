@@ -1,4 +1,4 @@
-name: third_eye
+name: agna
 dependencies:
   - python=3.9
   - pandas
