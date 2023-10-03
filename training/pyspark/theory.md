@@ -88,7 +88,7 @@ df = df.repartition(8, 'salt')
 df.groupBy(F.spark_partition_id()).count().show()
 ```
 
-```Repartition vs Coalesce```
+```Repartition vs Coalesce```  
 Repartition creates new partitions and shuffles all the data. Coalesce uses existing partitions to avoid a full shuffle.
 
 ```How to deal with small file problem?```   
@@ -115,3 +115,43 @@ Repartition creates new partitions and shuffles all the data. Coalesce uses exis
   - S3 - Stores filenames and timestamp of already processed files
   - JDBC - Stores already processed keys
 - Use S3 events
+
+```How many nodes, How many CPU cores, how may executers, how much executer memory```
+
+https://www.youtube.com/watch?v=NFpTXUVPyfQ
+
+for 10 GB file -
+
+> How many executors are needed?
+1. Find the no of partitions -  
+default partition size = 128 MB  
+therefore => 10240 / 128 = 80 partitions  
+2. Find CPU cores for maximum parallelism  
+80 cores for partitions
+3. Find the maximum allowed CPU cores for each executor  
+Recommended max CPU cores for YARN is 5 cores per executor
+4. Number of executors = Total Cores / Executor cores = 80 / 5 = 16
+
+> Default partition size can be increased to reduce number of partitions & cores needed.
+```
+conf = SparkConf().setAppName(app_name)\
+    .setMaster(master) \
+    .set('spark.sql.files.maxPartitionBytes','402653184')
+
+spark = SparkSession.builder.config(conf=conf) \
+    .getOrCreate()
+```
+
+> How many nodes?
+1. By default spark creates one executor per node in the cluster 
+2. hence number of nodes needed = number of executors needed
+3. But you can configure the number of executors based on your application's needs using --num-executors flag.
+
+> How many cores are needed for each executor?
+- 5 CPU cores needed per executor for YARN cluster
+
+> What amount of memory is required for each executor?
+1. Find the partition size = default => 128 MB
+2. Assign a minimum of 4X memory for each core = 128 * 4 = 512 MB
+3. Multiply it by executor cores to get executor memory = 512 MB * 5 = 2560 MB =~ 3GB
+
