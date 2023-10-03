@@ -29,7 +29,7 @@ Serialization is used by Spark for a variety of operations, including:
 - e.g. write(), collect(), take(), count(), etc.
 
 ```Hierarchies:```
-1. Driver > Worker > Executer
+1. Driver > Worker > Executer > CPU Cores
 2. Jobs > Stages > Tasks
 - Job - Each action creates a job.
 - Stage
