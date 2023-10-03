@@ -100,6 +100,12 @@ Repartition creates new partitions and shuffles all the data. Coalesce uses exis
 ```df.write.parquet("/path/to/parquet/files")```
 4. Use a different storage system   
 ```df.write.hdfs("/path/to/hdfs/files")```
+5. Delta lake has features to optimize writes and auto compact while writing to avoid small file problem
+```
+%sql
+set spark.databricks.delta.optimizeWrite.enabled = true
+set spark.databricks.delta.autoCompact.enabled = true
+```
 
 ```Spark Config Order of Precedence```
 1. Any values defined in spark-defaults.conf will be read first
