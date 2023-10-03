@@ -132,7 +132,7 @@ therefore => 10240 / 128 = 80 partitions
 Recommended max CPU cores for YARN is 5 cores per executor
 4. Number of executors = Total Cores / Executor cores = 80 / 5 = 16
 
-> Default partition size can be increased to reduce number of partitions & cores needed.
+> Default partition size can be increased to reduce number of partitions & cores needed using **maxPartitionBytes**
 ```
 conf = SparkConf().setAppName(app_name)\
     .setMaster(master) \
