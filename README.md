@@ -1,4 +1,4 @@
-# Agna
+# DataTrove
 
 This repository contains -
 - Collection of tools 🔧🛠⚙🔎 required for data engineering and data science projects.
@@ -8,7 +8,7 @@ This repository contains -
 
 ## Docker Commands
 ```
-docker build -t agna .
+docker build -t datatrove .
 docker images
-docker run --name agna_1 -i -t agna
+docker run --name datatrove -i -t datatrove
 ```
