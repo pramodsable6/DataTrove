@@ -1,4 +1,4 @@
-name: agna
+name: datatrove
 dependencies:
   - python=3.9
   - pandas
