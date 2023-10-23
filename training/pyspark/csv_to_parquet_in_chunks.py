@@ -16,3 +16,5 @@ while True:
         break
     chunk_df.write.mode("append").parquet("./output/")    
     offset += chunk_size
+
+# This code needs to be tested with exact scenario mentioned in the question
