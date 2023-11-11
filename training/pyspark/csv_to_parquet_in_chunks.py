@@ -1,4 +1,5 @@
 # How to convert large CSV file which does not fit into your machine/cluster memory to Parquet without scaling up
+# This code needs to be tested with exact scenario mentioned in the question, got this answer from Bing chat
 
 from pyspark.sql.functions import monotonically_increasing_id, col
 
@@ -16,5 +17,3 @@ while True:
         break
     chunk_df.write.mode("append").parquet("./output/")    
     offset += chunk_size
-
-# This code needs to be tested with exact scenario mentioned in the question
