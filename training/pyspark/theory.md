@@ -168,3 +168,7 @@ spark = SparkSession.builder.config(conf=conf) \
 2. Assign a minimum of 4X memory for each core = 128 * 4 = 512 MB
 3. Multiply it by executor cores to get executor memory = 512 MB * 5 = 2560 MB =~ 3GB
 
+
+> References
+
+https://www.linkedin.com/posts/martin-hro%C5%A1%C5%A1o-b21903170_apache-spark-extendrefresh-your-knowledge-activity-7166100577490300930-gIL_?utm_source=share&utm_medium=member_android
