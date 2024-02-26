@@ -168,8 +168,11 @@ spark = SparkSession.builder.config(conf=conf) \
 2. Assign a minimum of 4X memory for each core = 128 * 4 = 512 MB
 3. Multiply it by executor cores to get executor memory = 512 MB * 5 = 2560 MB =~ 3GB
 
-```Hive metastore location:```  
-Hive Metastore is used to store the metadata about the database and tables and by default, it uses the Derby database instance backed by local disk; You can change this to any RDBMS database like MySQL and Postgress, etc.
+```Hive metastore:```  
+1. Hive Metastore is used to store the metadata about the database and tables and by default, it uses the Derby database instance backed by local disk; You can change this to any RDBMS database like MySQL and Postgress, etc.
+2. Since Derby is embedded, it is limited to a single-node setup.
+3. Disadvantage: In distributed environments, where multiple replicas or nodes are essential, Derby falls short.
+4. Derby is primarily used for testing purposes. For production deployments, it’s recommended to use a more robust and scalable metastore solution, such as MySQL or PostgreSQL.
 
 ```Hive warehouse directory location:```  
 The default Hive warehouse directory location is /user/hive/warehouse. When you create tables in Hive, they are stored within this directory by default. However, you can customize this location by modifying the hive.metastore.warehouse.dir configuration parameter in the hive-site.xml file. If you need to change where your data is stored, feel free to adjust this setting to suit your requirements!
