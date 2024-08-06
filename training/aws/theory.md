@@ -8,3 +8,6 @@ https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.h
 https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_system-tables.html
 
 4. Redshift concurrency scaling for spiky workloads
+
+5. Lambda Reserved vs Provisioned concurrency -  
+   https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html
