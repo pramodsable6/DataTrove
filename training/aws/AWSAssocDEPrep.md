@@ -6,6 +6,9 @@ https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html
 - UltraWarm storage for Amazon OpenSearch Service -  
 https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.html
 
+- S3 storage classes -  
+https://aws.amazon.com/s3/storage-classes/
+
 `Lambda`
 - Lambda Reserved vs Provisioned concurrency -  
    https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html
@@ -18,6 +21,3 @@ https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_system-tables.html
 
 - Federated queries for querying data from multiple remote sources  
 https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html
-
-- S3 storage classes -  
-https://aws.amazon.com/s3/storage-classes/
