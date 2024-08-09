@@ -1,13 +1,16 @@
 `Athena`
 - Partition projection with Amazon Athena -  
-https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html
+   https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html
 
 `S3`
 - UltraWarm storage for Amazon OpenSearch Service -  
-https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.html
+   https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ultrawarm.html
 
 - S3 storage classes -  
-https://aws.amazon.com/s3/storage-classes/
+   https://aws.amazon.com/s3/storage-classes/
+
+- S3 object lambda -  
+   https://aws.amazon.com/s3/features/object-lambda/
 
 `Lambda`
 - Lambda Reserved vs Provisioned concurrency -  
@@ -15,9 +18,9 @@ https://aws.amazon.com/s3/storage-classes/
 
 `Redshift`
 - Redshift System tables and views reference -  
-https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_system-tables.html
+   https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_system-tables.html
 
 - Redshift concurrency scaling for spiky workloads
 
 - Federated queries for querying data from multiple remote sources  
-https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html
+   https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html
