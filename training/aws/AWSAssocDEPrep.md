@@ -18,3 +18,6 @@ https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_system-tables.html
 
 - Federated queries for querying data from multiple remote sources  
 https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html
+
+- S3 storage classes -  
+https://aws.amazon.com/s3/storage-classes/
