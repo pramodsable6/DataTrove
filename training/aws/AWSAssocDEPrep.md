@@ -33,3 +33,13 @@
    - Metadata Storage: EMRFS uses DynamoDB to store metadata about the files in Amazon S3. This metadata helps ensure that the file system has a consistent view of the data, even when multiple EMR clusters are accessing the same S3 bucket1.
    - Data Consistency: DynamoDB helps EMRFS track changes to the data in S3, ensuring that all nodes in the EMR cluster have a consistent view of the data. This is crucial for maintaining data integrity and consistency across distributed systems1.
   - Performance Optimization: By using DynamoDB to store metadata, EMRFS can quickly retrieve information about the files without having to repeatedly scan the S3 bucket. This improves the performance of data-intensive operations1.
+ 
+`File formats`  
+- File formats and data compression  
+https://docs.aws.amazon.com/whitepapers/latest/aws-glue-best-practices-build-performant-data-pipeline/building-a-performance-efficient-data-pipeline.html#file-formats-and-data-compression
+
+`Optimization`  
+- Building a performance efficient data pipeline  
+https://docs.aws.amazon.com/whitepapers/latest/aws-glue-best-practices-build-performant-data-pipeline/building-a-performance-efficient-data-pipeline.html
+- Building a cost-effective data pipeline  
+https://docs.aws.amazon.com/whitepapers/latest/aws-glue-best-practices-build-performant-data-pipeline/building-a-cost-effective-data-pipeline.html
