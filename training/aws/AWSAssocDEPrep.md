@@ -1,6 +1,8 @@
 `Athena`
 - Partition projection with Amazon Athena -  
    https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html
+- Access to Amazon S3 from Athena -  
+  https://docs.aws.amazon.com/athena/latest/ug/s3-permissions.html
 
 `S3`
 - UltraWarm storage for Amazon OpenSearch Service -  
