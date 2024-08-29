@@ -27,7 +27,7 @@
 - Federated queries for querying data from multiple remote sources  
    https://docs.aws.amazon.com/redshift/latest/gsg/federated-query.html
 
-- Amazon Redshift Federated Query enables you to use the analytic power of Amazon Redshift to directly query data stored in Amazon Aurora PostgreSQL and Amazon RDS for PostgreSQL databases.
+- Amazon Redshift Federated Query enables you to use the analytic power of Amazon Redshift to directly query data stored in Amazon Aurora PostgreSQL and Amazon RDS for PostgreSQL databases.  
   https://aws.amazon.com/blogs/big-data/amazon-redshift-federated-query-best-practices-and-performance-considerations/
 
 `Eventbridge`  
@@ -38,6 +38,10 @@
    - Metadata Storage: EMRFS uses DynamoDB to store metadata about the files in Amazon S3. This metadata helps ensure that the file system has a consistent view of the data, even when multiple EMR clusters are accessing the same S3 bucket1.
    - Data Consistency: DynamoDB helps EMRFS track changes to the data in S3, ensuring that all nodes in the EMR cluster have a consistent view of the data. This is crucial for maintaining data integrity and consistency across distributed systems1.
   - Performance Optimization: By using DynamoDB to store metadata, EMRFS can quickly retrieve information about the files without having to repeatedly scan the S3 bucket. This improves the performance of data-intensive operations1.
+
+'Amazon Macie'  
+- Discovering sensitive data with Macie -  
+  https://docs.aws.amazon.com/macie/latest/user/data-classification.html
  
 `File formats`  
 - File formats and data compression  
