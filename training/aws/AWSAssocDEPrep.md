@@ -39,9 +39,18 @@
    - Data Consistency: DynamoDB helps EMRFS track changes to the data in S3, ensuring that all nodes in the EMR cluster have a consistent view of the data. This is crucial for maintaining data integrity and consistency across distributed systems1.
   - Performance Optimization: By using DynamoDB to store metadata, EMRFS can quickly retrieve information about the files without having to repeatedly scan the S3 bucket. This improves the performance of data-intensive operations1.
 
-'Amazon Macie'  
+`Amazon Macie`  
 - Discovering sensitive data with Macie -  
   https://docs.aws.amazon.com/macie/latest/user/data-classification.html
+
+`Amazon Appflow`  
+Amazon AppFlow is a fully managed integration service that allows you to securely exchange data between SaaS applications (such as Salesforce, SAP, Google Analytics, Facebook Ads, and ServiceNow) and AWS services (such as Amazon S3 and Amazon Redshift). It enables you to automate data transfers without writing code.
+
+`AWS Data Exchange`
+- For Providers -
+  AWS Data Exchange gives you a secure and efficient distribution channel to reach millions of AWS customers with your data. It eliminates the need to build and maintain infrastructure for data storage, delivery, billing, and entitling. In addition to reaching new customers, you can grant entitlements to your existing customers for no cost. AWS Data Exchange gives you a single API that enables both new and existing customers to consume your data in the AWS Cloud.
+- For Consumers -
+  There is no other place where customers can find data files, data tables, and data APIs from a vast portfolio of third-party data sets. We continuously innovate to make the world's third-party data easy to find in one data catalog, simple to subscribe to with consistent pricing options, and seamless to use with AWS data and analytics and machine learning services. 
  
 `File formats`  
 - File formats and data compression  
