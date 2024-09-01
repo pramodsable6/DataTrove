@@ -30,6 +30,10 @@
 - Amazon Redshift Federated Query enables you to use the analytic power of Amazon Redshift to directly query data stored in Amazon Aurora PostgreSQL and Amazon RDS for PostgreSQL databases.  
   https://aws.amazon.com/blogs/big-data/amazon-redshift-federated-query-best-practices-and-performance-considerations/
 
+`DynamoDB`  
+- OnDemand vs Provisioned -  
+https://docs.aws.amazon.com/wellarchitected/latest/serverless-applications-lens/capacity.html
+
 `Eventbridge`  
 - When you create the EventBridge event trigger, you can optionally specify batch conditions. If you specify batch conditions, you must specify the batch size (number of events), and can optionally specify a batch       window (number of seconds). The default and maximum batch window is 900 seconds (15 minutes). The batch condition that is met first starts the workflow. The batch window starts when the first event arrives. If you     don't specify batch conditions when creating a trigger, the batch size defaults to 1.
 
