@@ -1,3 +1,8 @@
+```Hadoop platform```
+YARN - Cluster Operating System
+HDFS - Distributed Storage
+Map/Reduce - Distributed Computing
+
 ```Spark Cluster Managers:```
 1. local[n]
 2. YARN
